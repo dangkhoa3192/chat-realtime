@@ -154,9 +154,11 @@ section .form {
 }
 
 .user_wrapper {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     padding: 10px;
     cursor: pointer;
+    border-bottom: 1px solid var(--color-4);
+    border-color: #524646;
 }
 
 .user_info {
@@ -265,7 +267,11 @@ section .form {
     opacity: 0.8;
 }
 
-.message_wrapper .own {
+/* .message_wrapper .own {
+    text-align: right;
+} */
+
+.own {
     text-align: right;
 }
 
@@ -276,4 +282,75 @@ section .form {
 
 .friend {
     background: var(--color-6);
+}
+
+.selected_user {
+    background: var(--color-6);
+}
+
+.truncate {
+    font-size: 14px;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.truncate strong {
+    margin-right: 10px;
+}
+
+.unread {
+    margin-left: 10px;
+    background: var(--color-3);
+    color: white;
+    padding: 2px 4px;
+    border-radius: 10px;
+}
+
+.sm_screen {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .home_container {
+        grid-template-columns: 2fr 3fr;
+    }
+    .message_form {
+        left: 3%;
+        right: 0%;
+        bottom: 5px;
+    }
+    .message_wrapper p {
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .home_container {
+        grid-template-columns: 1fr 5fr;
+    }
+    .user_wrapper {
+        display: none;
+    }
+    .sm_container {
+        padding: 10px 0px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .sm_screen {
+        display: inline-block;
+    }
+    .message_form input {
+        width: 50vw;
+        margin: 0px 10px;
+    }
+    .message_form .btn {
+        margin: 0px;
+    }
+    .message_wrapper p {
+        max-width: 100%;
+    }
 }

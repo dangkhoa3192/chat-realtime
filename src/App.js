@@ -5,8 +5,10 @@ import Navbar from "./components/Navbar";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from './pages/Profile';
+import { auth } from './firebase';
 
 function App() {
+    console.log(auth.currentUser);
 	return (
 			<BrowserRouter>
                 <Navbar />

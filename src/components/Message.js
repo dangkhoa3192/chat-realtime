@@ -1,5 +1,6 @@
 import React, {useRef, useEffect} from "react";
 import Moment from "react-moment";
+import Mark from "./svg/Mark";
 
 const Message = ({ msg, user1 }) => {
     const scrollRef = useRef();
@@ -15,6 +16,7 @@ const Message = ({ msg, user1 }) => {
                 {msg.text}
                 <br />
                 <small>
+                    <Mark />
                     <Moment fromNow>{msg.createAt.toDate()}</Moment>
                 </small>
             </p>
