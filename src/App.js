@@ -6,10 +6,11 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from './pages/Profile';
 import { auth } from './firebase';
+import AuthProvider from './context/auth';
 
 function App() {
-    console.log(auth.currentUser);
 	return (
+        <AuthProvider>
 			<BrowserRouter>
                 <Navbar />
                 <Switch>
@@ -19,6 +20,7 @@ function App() {
                     <Route exact path="/" component={Home} />
                 </Switch>
             </BrowserRouter> 		
+        </AuthProvider>
 	);
 }
 
